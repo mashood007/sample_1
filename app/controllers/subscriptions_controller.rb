@@ -7,4 +7,7 @@ class SubscriptionsController < ApplicationController
   	end
   end
 
+  def total_amount
+  end
+
 end
