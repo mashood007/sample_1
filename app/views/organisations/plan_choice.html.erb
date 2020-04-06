@@ -1,0 +1,24 @@
+<br>
+<br>
+<div class="container">
+<%= form_for @organisation, as: :subscribe, url: subscribed_organisations_path do |form| %>
+	<%= form.hidden_field :id %>
+  <div class="form-group row">
+    <%= form.label :subscription_type%>
+    <%= form.select :subscription_id, options_for_select(@subscriptions), :class => 'genForm_dropBox', :prompt => 'Select any one' %>
+  </div>
+
+
+
+  <div class="form-group row">
+  	<div class="col-sm-12" id="subscription_type_details">
+  		
+  	</div>
+  </div>
+
+  <div class="form-group row">
+  		<%= form.submit "Pay", :class => "btn btn-info subscribe_button" %>
+  </div>
+
+<%end%>
+</div>
