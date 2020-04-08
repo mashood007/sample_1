@@ -18,7 +18,9 @@
 
 
   <div class="col-sm-4">
+  <% if boards_within_limit? %>
     <%= form.submit %>
+  <%end%>
   </div>
 </div>
 <% end %>

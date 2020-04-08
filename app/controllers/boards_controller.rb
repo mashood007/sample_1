@@ -1,20 +1,18 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_board, only: [:show, :edit, :destroy]
   before_action :add_user_id_and_organisation_id_into_params, only: [:create]
   before_action :check_limit, only: [:create, :new]
 
-  # GET /boards
-  # GET /boards.json
+
   def index
-    @boards = Board.all
+    @boards = Board.organisation_is(current_user.organisation_id)
   end
 
-  # GET /boards/1
-  # GET /boards/1.json
+
   def show
   end
 
-  # GET /boards/new
   def new
     @board = Board.new
   end
@@ -26,7 +24,6 @@ class BoardsController < ApplicationController
   # POST /boards
   # POST /boards.json
   def create
-
     @board = Board.new(board_params)
 
     respond_to do |format|
@@ -64,6 +61,9 @@ class BoardsController < ApplicationController
     end
   end
 
+  def canvas
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
@@ -81,7 +81,8 @@ class BoardsController < ApplicationController
     end
 
     def check_limit
-      @organisation = current_user.organisation
-      redirect_to boards_url unless @organisation.try(:number_of_boards) < @organisation.boards.size
+      redirect_to boards_url unless boards_within_limit?
     end
+
+
 end

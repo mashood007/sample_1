@@ -53,4 +53,49 @@ $(document).ready(function(){
 
 
 
+
+
 });
+
+
+  function children(parent)
+  {
+
+	$.ajax({
+	  url: "cards/get_children",
+	  type: "get", //send it through get method
+	  data: { 
+	     parent: parent 
+	  },
+	  success: function(response) {
+	    //Do Something
+	  },
+	  error: function(xhr) {
+	    //Do Something to handle error
+	  }
+	});
+
+  }
+
+function close_modal()
+{
+	$('.tasks_modal').hide()
+}
+
+	function card_tasks(id)
+	{
+
+		// id = $(this).data('id')
+	
+		$.ajax({
+		  url: "/cards/"+id+"/tasks",
+		  type: "get", //send it through get method
+		  success: function(response) {
+		    //Do Something
+		  },
+		  error: function(xhr) {
+		    //Do Something to handle error
+		  }
+		});		
+	
+	}
