@@ -9,8 +9,6 @@ class Bill
 	   	 	startup params
 	   	 when 3
 	   		enterprice params
-	   	 #else
-	   	 	#["error" , "Please try agin" ]
 	   end
 	end
 
@@ -18,7 +16,7 @@ class Bill
 	  if params[:number_of_boards].to_i > 0
 	  	 monthly = params[:number_of_boards].to_i*2
 	  	 anual_pay = monthly * 12
-	   	 {title: "calculated", message: "#{monthly} for monthly, Anual cost is #{anual_pay}"}
+	   	 {title: "calculated", message: "$#{monthly} for monthly, Anual cost is $#{anual_pay}"}
 	  else
 	  	{title: "error" , message: "Should have at least one board" }
 	  end
@@ -32,7 +30,7 @@ class Bill
 			board_charge = 216 #18*12
 			additional_charge = number_of_users > 5 ? ((number_of_users - 5) * 7*12) : 0
 			anual_pay = basic_charge + board_charge + additional_charge
-	   	    {title: "calculated", message: "Anual cost is #{anual_pay}"}
+	   	    {title: "calculated", message: "Anual cost is $#{anual_pay}"}
 		else
 			{title: "error" , message: "Should have at least 5 users" }
 		end
@@ -46,7 +44,7 @@ class Bill
 			board_charge = 660 #55*12
 			additional_charge = number_of_users > 20 ? ((number_of_users - 20) * 6*12) : 0
 			anual_pay = basic_charge + board_charge + additional_charge
-	   	    {title: "calculated", message: "Anual cost is #{anual_pay}"}
+	   	    {title: "calculated", message: "Anual cost is $#{anual_pay}"}
 		else
 			{title: "error" , message: "Should have at least 20 users" }
 		end
