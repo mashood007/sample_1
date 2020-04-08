@@ -1,18 +1,2 @@
 $('#subscription_type_details').html("<%= escape_javascript(render('details')) %>")
-
-  $('#number_of_users, #number_of_boards').keyup(function(){
-  	
-  	$.ajax({
-	  url: "/subscriptions/total_amount",
-	  type: "get", //send it through get method
-	  data: { 
-	     id: subscription_id 
-	  },
-	  success: function(response) {
-	    //Do Something
-	  },
-	  error: function(xhr) {
-	    //Do Something to handle error
-	  }
-	});
-  });
+calculate_subscription(id)

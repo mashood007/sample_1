@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :check_admin_user
+  before_action :check_org
 
-  def index
+  def index 
     @users = current_user.organisation.users
   end
 

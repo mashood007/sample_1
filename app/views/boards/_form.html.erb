@@ -10,17 +10,15 @@
       </ul>
     </div>
   <% end %>
-<div class="row">
-  <div class="col-sm-3">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :class => "form-control" %>
   </div>
 
 
-  <div class="col-sm-4">
+  <div class="form-group">
   <% if boards_within_limit? %>
-    <%= form.submit %>
+    <%= form.submit "Create" , :class => "btn btn-info btn-block" %>
   <%end%>
   </div>
-</div>
 <% end %>

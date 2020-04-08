@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   resources :subscriptions do
   	collection do 
   		get :details
-      get :total_amount
+      get :calculate
     end
   end
 

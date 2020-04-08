@@ -2,7 +2,10 @@
 
 <div class="container">
 <p id="notice"><%= notice %></p>
-
+<br>
+<% if boards_within_limit? %>
+  <%= link_to 'New Board', new_board_path %>
+<%end%>
 <h1>Boards</h1>
 
  <div class="row">
@@ -22,8 +25,5 @@
     <% end %>
  </div>
 
-<br>
-<% if boards_within_limit? %>
-  <%= link_to 'New Board', new_board_path %>
-<%end%>
+
 </div>

@@ -3,7 +3,6 @@ class HomeController < ApplicationController
 	before_action :check_org
 
 	def index
-		puts "*******curre",current_user.inspect
 		#@user = User.find(session[:user_id])
 	end
 

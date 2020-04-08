@@ -7,7 +7,9 @@ class SubscriptionsController < ApplicationController
   	end
   end
 
-  def total_amount
+  def calculate
+  	@message = Bill.calculate params
+  	render json:  @message
   end
 
 end

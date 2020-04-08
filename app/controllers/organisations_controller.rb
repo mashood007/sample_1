@@ -34,7 +34,7 @@ class OrganisationsController < ApplicationController
 	end
 
 	def plan_choice
-		@subscriptions = Subscription.all.collect {|s| [s.title, s.id]}
+		@subscriptions = Subscription.all#.collect {|s| [s.title, s.id]}
 		@organisation = current_user.organisation
 	end
 
