@@ -34,4 +34,7 @@ The GEMS which helped me
   => rake db:seed
   
     ( Here some default records, which are enterd to the subscriptions tables)
+    
+=> Project Importing
 
+curl -v   -H "Accept: application/json"   -H "Content-type: application/json"   -X POST   -d ' {"project":{"organisation":{"name":"sample","loacation":"org","subscription_id":"2", "number_of_users":"2","number_of_boards":"-1"},"users":{"0":{"user":{"email":"benz@sample.com","name":"ben","password":"123456", "normal_user":"false"}},"1":{"user":{"email":"senz@sample.com","name":"sen","password":"123456", "normal_user":"true"}}}}}'    https://paltov2.herokuapp.com/api/v1/projects
