@@ -13,10 +13,16 @@ Things which are used:
 The GEMS which helped me
  => Devise
   In this project I used the devise GEM for user authentication
+  
+  
  => omniauth-facebook
   This GEM is used to help user authentication with the facebook account
+  
+  
  => bootstrap
   This GEM is used to include the bootstrap libraries
+  
+  
  => jquery-rails
   THis GEM is used to include the jquery libraires
   
@@ -24,6 +30,8 @@ The GEMS which helped me
 * Prepends
 
   => rake db:migrate
+  
   => rake db:seed
+  
     ( Here some default records, which are enterd to the subscriptions tables)
 
