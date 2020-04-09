@@ -7,7 +7,7 @@ class Project
   def build
   	@organisation = OrganisationBuilder.create @params[:project]
 
-  	(0...@params[:number_of_users].to_i).each do |index|
+  	(0...@organisation.number_of_users.to_i).each do |index|
   		@user = UserBuilder.create @params[:project][:users]["#{index}"], @organisation.id
   	 end
   end
@@ -22,7 +22,7 @@ class OrganisationBuilder
   end
 
   def self.org_params params
-  	params.require(:organisation).permit( :name, :location)
+  	params.require(:organisation).permit( :name, :location, :subscription_id, :number_of_users, :number_of_boards)
   end
 
 end
@@ -36,7 +36,6 @@ class UserBuilder
   end
 
   def self.user_params params
-  	puts "************user_params*******",params.inspect
     params.require(:user).permit(:name, :email, :password, :normal_user, :organisation_id)
   end
 end
