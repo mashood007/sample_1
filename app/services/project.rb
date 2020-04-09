@@ -30,7 +30,7 @@ end
 class UserBuilder
   
   def self.create params, organisation_id
-  	params[:organisation_id] = organisation_id
+  	params[:user][:organisation_id] = organisation_id
   	@user = User.new user_params(params)
   	@user.save
   end
