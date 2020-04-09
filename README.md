@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PLATO 
 
-Things you may want to cover:
+Things which are used:
 
-* Ruby version
+* Ruby 2.5.1 
 
-* System dependencies
+* Rails 5.2
 
-* Configuration
+* Postgres 10.1
 
-* Database creation
+The GEMS which helped me
+ => Devise
+  In this project I used the devise GEM for user authentication
+ => omniauth-facebook
+  This GEM is used to help user authentication with the facebook account
+ => bootstrap
+  This GEM is used to include the bootstrap libraries
+ => jquery-rails
+  THis GEM is used to include the jquery libraires
+  
 
-* Database initialization
+* Prepends
 
-* How to run the test suite
+  => rake db:migrate
+  => rake db:seed
+    ( Here some default records, which are enterd to the subscriptions tables)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
