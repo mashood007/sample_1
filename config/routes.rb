@@ -42,4 +42,16 @@ Rails.application.routes.draw do
   end
 
 
+  namespace :api do
+    namespace :v1 do
+      resources :users
+      resources :projects
+      # resources :projects, only: [:index] do
+      #   collection do
+      #     get 'import'
+      #   end
+      # end
+    end
+  end
+
 end
